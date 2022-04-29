@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Menu Card</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+  <!-- We import arjs version without NFT but with marker + location based support -->
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+  <script src = "https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"></script>
+  
+  <script type = "module">
+    const firebaseConfig = {
+    apiKey: "AIzaSyAbDEDQRpAMjh2OMfw5q3U6JPgFW2Ramt4",
+    authDomain: "menucardapp-2bdc9.firebaseapp.com",
+    projectId: "menucardapp-2bdc9",
+    storageBucket: "menucardapp-2bdc9.appspot.com",
+    messagingSenderId: "658148327331",
+    appId: "1:658148327331:web:201f2e6c6081be09ce2416"
+  };
+  
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <!-- Local StyleSheet -->
+  <link href="./style.css" rel="stylesheet" />
+
+  <!--Js Files-->
+  <script src="./js/markerHandler.js"></script>
+  <script src="./js/addMarkers.js"></script>
+  <script src="./js/addButtons.js"></script>
+
+</head>
+
+<body style="margin : 0px; overflow: hidden;">
+  <a-scene id="scene" vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; 
+      sourceWidth:1280; sourceHeight:960; 
+      displayWidth: 1280; displayHeight: 960; 
+      debugUIEnabled: false;" gesture-detector create-markers create-buttons>
+    <!-- Camera -->
+    <a-entity camera></a-entity>
+
+  </a-scene>
+
+  <div id="button-div" class="fixed-bottom"></div>
+
+</body>
+
+</html>
